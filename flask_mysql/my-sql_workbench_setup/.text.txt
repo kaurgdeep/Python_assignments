@@ -1,0 +1,5 @@
+INSERT INTO `twitter`.`tweets` (`tweet`, `user_id`, `created_at`, `updated_at`) VALUES ('happy birthday', '1', '2014-02-01 00:00:01', '2014-02-01 00:00:01');
+
+SELECT * FROM tweets;
+UPDATE `twitter`.`users` SET `first_name`='gagan' WHERE `id`='1';
+DELETE FROM `twitter`.`users` WHERE `id`='1';

@@ -1,0 +1,11 @@
+pip install Django==1.11.9
+(it installs django version 1.11.9)
+pip list(it shows whole pip list what I have)
+after deactivate virtualevn its out of virtualevn, not showing in list
+will show virtualevn folder again after activating again.
+after install django again it says requirement satisfied.
+freese shows comparison == as list doesn't (list for developers use on the otherhand freese is for user or othsr person to see stuf that he migth need)
+(pip freeze > requirements.txt)(ls) it creates the file which we requirement
+(pip uninstall Django)its successfully uninstall django.
+(pip show Django) its does show anything.
+(pip search Flask)it shows all the different pacakes of flask.

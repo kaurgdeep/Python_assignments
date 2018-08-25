@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>survey form</title>
+    </head>
+    <body>
+        <form action="/process" method="POST">
+            {% csrf_token %}
+            <p><label for="your name">Your name</label>
+                <input type="text" name="name" value="">
+            </p>    
+            <p><label for="dojo location">Dojo location</label>
+                <select name="location" >
+                    <option value="washington">washinton</option>
+                    <option value="calofornia">california</option>
+                    <option value="texas">texas</option>
+                </select>
+            </p>
+
+            <p><label for="favorite language">favorite language</label>
+                <select name="language" >
+                    <option value="python">python</option>
+                    <option value="django">Django</option>
+                    <option value="flask">Flask</option>
+                </select>
+            </p>
+            <p><label for="comments">comments(optional):</label></p>
+            <p><textarea name="comments" id="comments" cols="40" rows="5"></textarea></p>    
+            <p><input type="submit"></p>
+        </form>
+    </body>
+  </html>

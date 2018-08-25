@@ -1,0 +1,33 @@
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title>survey form results</title>
+      <style>
+          .notice{
+              height: 80px;
+              width: 400px;
+              background-color:#b6d7a8;
+              border: 5px solid black;
+              font-size: 20px;
+              padding: 10px;
+              text-align: center;
+          }
+
+      </style>
+    </head>
+    <body>
+            <form action="/result" method="POST">
+                {% csrf_token %}
+                <p class="notice">Thanks for submitting this form! you have submitted this form {{request.session.counter}} times.</p>
+            <div class="submitted">   
+                <p>submitted information</p>
+                <p>Name : {{request.session.name}}</p>
+                <p>Dojo location : {{request.session.location}} </p>
+                <p>favorite language : {{request.session.language}}</p>
+                <p>comments: {{request.session.comments}}</p>
+            </div> 
+            </form>
+            <a href="/clear">Go Back</a>
+    </body>
+</html>
+      

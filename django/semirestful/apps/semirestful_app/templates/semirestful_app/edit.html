@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <meta charset="utf-8"> -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'semirestful_app/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+    <title>Users Edit page</title>
+  </head>
+
+  <body>
+    <!-- <h1>This is edit.html</h1> -->
+    <div class="new_user">
+      <form action="/users/{{ user.id }}/edit" method="POST" id="updateform">
+        {% csrf_token %}
+        <h1>Edit User {{ user.id }}</h1>
+        <h4>First name:</h4>
+        <input type="text" name="first_name">
+        <h4>Last name:</h4>
+        <input type="text" name="last_name">
+        <h4>Email:</h4>
+        <input type="text" name="email">
+        <br>
+        <br>
+<!-- This button sends the edited user data to update function via the form action, to be put in the database -->
+        <button type="submit" form="updateform" value="Update">Update</button>
+        <br>
+        <br>
+        <!-- returns to users page (index.html) -->
+        <a href="/users/{{ user.id }}/show">Show</a> | <a href="/users">Go Back</a>
+      </form>
+    </div>
+  </body>
+</html>

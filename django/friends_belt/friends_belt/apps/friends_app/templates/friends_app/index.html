@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang='en' dir='ltr'>
+  <head>
+    <meta charset='utf-8'>
+    <style>
+    body {background: linear-gradient(to right, white, #66ff66)};
+    </style>
+    <title> Login/Registration </title>
+  </head>
+  <body>
+    {% if messages %}
+      {% for message in messages %}
+        <div class="error"> {{ message }} </div>
+      {% endfor %}
+    {% endif %}
+    <h3> Welcome! </h3>
+
+    <form action='processReg' method='POST'>
+      {% csrf_token %}
+      <fieldset>
+        <legend>
+          <h4> Register </h4>
+        </legend>
+          <label for='name'> Name </label>
+          <input type='text' name='name' placeholder='Name'>
+          <br>
+          <label for='alias'> Alias </label>
+          <input type='text' name='alias' placeholder='Alias'>
+          <br>
+          <label for'email'> Email </label>
+          <input type='text' name='email' placeholder='Email'>
+          <br>
+          <label for='password'> Password </label>
+          <input type='password' name='password' placeholder='Password'>
+          <br>
+          <label for='confirmPW'> ConfirmPW </label>
+          <input type='password' name='confirmPW' placeholder='Confirm Password'>
+          <br>
+          <label for='birthday'> Birthday </label>
+          <input type='date' name='birthday'>
+          <br>
+          <input type='submit' value='Register'>
+        </form>
+      </fieldset>
+    <br>
+    <br>
+      <fieldset>
+        <legend>
+          <h4> Login </h4>
+        </legend>
+          <form action='processLog' method='POST'>
+            {% csrf_token %}
+            <label for='alias'> Alias </label>
+            <input type='text' name='alias' placeholder='Alias'>
+            <br>
+            <label for'email'> Email </label>
+            <input type='text' name='email' placeholder='Email'>
+            <br>
+            <label for='password'> Password </label>
+            <input type='password' name='password' placeholder='Password'>
+            <br>
+            <input type='submit' value='Login'>
+          </form>
+      </fieldset>
+    </br>
+  </body>
+</html>

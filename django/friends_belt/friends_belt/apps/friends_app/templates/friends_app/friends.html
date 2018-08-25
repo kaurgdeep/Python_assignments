@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang='en' dir='ltr'>
+  <head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <style>
+    body {background: linear-gradient(to left, powderblue, #caa5ef)};
+    </style>
+    <div>
+    <a href="/logout"> |  Logout  | </a>
+    <div>
+    <title>Friends</title>
+  </head>
+  <body>
+    <h1>Welcome {{request.session.alias}}!</h1>
+    {% if my_friends %}
+      <p> Here is the list of your friends: </p>
+
+      <div class='my_friends'>
+        <table class="table-striped table">
+          <tr>
+            <th>Alias</th>
+            <th>Action</th>
+          </tr>
+          {% for user in my_friends %}
+          <tr>
+            <td>{{user.alias}}</td>
+            <td>
+              <a href='/user/{{user.id}}'> View Profile  | </a> <a href='/unfriend/{{request.session.user_id}}/{{user.id}}'> Remove as Friend </a>
+
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    {% else %}
+      <p> You don't have any friends yet. </p>
+    {% endif %}
+      <br>
+      <br>
+    <p> Other Users not on your friend's list: </p>
+    <div class='not_my_friends'>
+      <table class="table-striped table">
+        <tr>
+          <th>Alias</th>
+          <th>Action</th>
+        </tr>
+        {% for user in not_my_friends %}
+          {% if user.id != request.session.user_id %}
+            <tr>
+              <td><a href='user/{{user.id}}'>{{user.name}}</td>
+              <td>
+                <a href='/addFriend/{{request.session.user_id}}/{{user.id}}'><button> Add as Friend </button></a>
+              </td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>

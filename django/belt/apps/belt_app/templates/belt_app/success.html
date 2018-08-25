@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title>login</title>
+      <style>
+          body{
+            width: 960px;
+            height: 1000px;
+              background: linear-gradient(#ffe0b3, #f48f82, #faf0c1, #377185);
+          }
+          
+      </style>
+    </head>
+    <body>
+        <h1>Hello,{{ request.session.current_user.first_name}}</h1>
+        <a href="/home">Home</a> | <a href="/logout">Logout</a>
+        <br>
+        <a href="/create">Add Item</a>
+    </body>
+</html>

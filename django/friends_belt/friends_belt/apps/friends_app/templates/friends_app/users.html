@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang='en' dir='ltr'>
+  <head>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <style>
+    body {background: linear-gradient(to left, #ffcc99, #ffcccc, #ffff99)};
+    </style>
+    <div>
+    <a href="/friends">Home</a>
+    <a href="/logout">Logout</a>
+    <div>
+    <title>{{user}}</title>
+  </head>
+  <body>
+    <h1>{{user.alias}}'s Profile'</h1>
+    <p>Name: {{user.name}}</p>
+    <p>Email: {{user.email}}</p>
+  </body>
+</html>
